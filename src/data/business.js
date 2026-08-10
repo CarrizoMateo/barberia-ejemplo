@@ -1,6 +1,6 @@
 const business = {
   name: 'Barber Premium',
-  shortName: 'BARBER/PELUQUERÍA',
+  shortName: 'BARBERÍA',
 
   tagline: {
     first: 'Tu estilo.',
