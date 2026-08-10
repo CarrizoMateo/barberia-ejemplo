@@ -1,0 +1,15 @@
+:root {
+  --brand-color: #d4af37;
+}
+
+.brand-color {
+  color: var(--brand-color);
+}
+
+.brand-bg {
+  background-color: var(--brand-color);
+}
+
+.brand-border {
+  border-color: var(--brand-color);
+}
