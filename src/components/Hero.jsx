@@ -1,35 +1,32 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import images from '../assets/images'
 import business from '../data/business'
 
 function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center overflow-hidden bg-black"
+      className="relative min-h-screen w-full overflow-hidden bg-black"
     >
       {/* Fondo */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(245,158,11,0.12),transparent_35%)]" />
-
+      <div className="absolute inset-0 overflow-hidden">
         <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-amber-500/5 to-transparent" />
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-20 lg:px-8">
-        <div className="max-w-4xl">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+        <div className="w-full max-w-4xl">
 
           {/* Etiqueta */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-8 flex items-center gap-4"
+            className="mb-8 flex min-w-0 items-center gap-4"
           >
-            <span className="h-px w-12 bg-amber-400" />
+            <span className="h-px w-12 shrink-0 bg-amber-400" />
 
-            <span className="text-xs font-medium uppercase tracking-[0.35em] text-amber-400">
+            <span className="truncate text-xs font-medium uppercase tracking-[0.25em] text-amber-400 sm:tracking-[0.35em]">
               {business.name}
             </span>
           </motion.div>
@@ -39,14 +36,15 @@ function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-5xl sm:text-6xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl"
+            className="max-w-full break-words font-serif text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
           >
             {business.tagline.first}
+
             <br />
 
-          <span className="text-amber-400">
-            {business.tagline.second}
-          </span>
+            <span className="text-amber-400">
+              {business.tagline.second}
+            </span>
           </motion.h1>
 
           {/* Descripción */}
@@ -65,11 +63,11 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-10 flex w-full flex-col gap-4 sm:flex-row"
           >
             <a
               href="#contacto"
-              className="group inline-flex items-center justify-center gap-3 bg-amber-400 px-7 py-4 text-sm font-bold uppercase tracking-wide text-black transition-all duration-300 hover:bg-amber-300"
+              className="group inline-flex w-full items-center justify-center gap-3 bg-amber-400 px-7 py-4 text-sm font-bold uppercase tracking-wide text-black transition-all duration-300 hover:bg-amber-300 sm:w-auto"
             >
               Reservar turno
 
@@ -81,7 +79,7 @@ function Hero() {
 
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center border border-white/20 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:border-amber-400 hover:text-amber-400"
+              className="inline-flex w-full items-center justify-center border border-white/20 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:border-amber-400 hover:text-amber-400 sm:w-auto"
             >
               Ver servicios
             </a>
@@ -92,38 +90,38 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 flex flex-wrap gap-8 border-t border-white/10 pt-6"
+            className="mt-16 grid grid-cols-2 gap-y-8 border-t border-white/10 pt-6 sm:flex sm:flex-wrap sm:gap-8"
           >
-            <div>
+            <div className="min-w-0">
               <p className="text-2xl font-bold text-white">
                 4.9
               </p>
 
-              <p className="mt-1 text-xs uppercase tracking-wider text-white/40">
+              <p className="mt-1 text-[10px] uppercase tracking-wider text-white/40 sm:text-xs">
                 Valoración
               </p>
             </div>
 
-            <div className="h-10 w-px bg-white/10" />
+            <div className="hidden h-10 w-px bg-white/10 sm:block" />
 
-            <div>
+            <div className="min-w-0">
               <p className="text-2xl font-bold text-white">
                 +500
               </p>
 
-              <p className="mt-1 text-xs uppercase tracking-wider text-white/40">
+              <p className="mt-1 text-[10px] uppercase tracking-wider text-white/40 sm:text-xs">
                 Clientes
               </p>
             </div>
 
-            <div className="h-10 w-px bg-white/10" />
+            <div className="hidden h-10 w-px bg-white/10 sm:block" />
 
-            <div>
+            <div className="min-w-0">
               <p className="text-2xl font-bold text-white">
                 +10
               </p>
 
-              <p className="mt-1 text-xs uppercase tracking-wider text-white/40">
+              <p className="mt-1 text-[10px] uppercase tracking-wider text-white/40 sm:text-xs">
                 Años de experiencia
               </p>
             </div>

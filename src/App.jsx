@@ -1,34 +1,37 @@
-import { useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Gallery from "./components/Gallery";
-import About from "./components/About";
-import Reviews from "./components/Reviews";
-import Location from "./components/Location";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
-import business from "./data/business";
+import { useEffect } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Gallery from './components/Gallery'
+import About from './components/About'
+import Reviews from './components/Reviews'
+import Location from './components/Location'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import business from './data/business'
 
 function App() {
   useEffect(() => {
-    document.title = `${business.name} | Cortes y Barba`;
+    document.title = `${business.name} | Cortes y Barba`
 
-    const description = document.querySelector('meta[name="description"]');
+    const description = document.querySelector(
+      'meta[name="description"]'
+    )
 
     if (description) {
       description.setAttribute(
-        "content",
-        `${business.name} — cortes, barba y estilo profesional en ${business.city}.`,
-      );
+        'content',
+        `${business.name} — cortes, barba y estilo profesional en ${business.city}.`
+      )
     }
-  }, []);
+  }, [])
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="w-full min-w-0 overflow-x-hidden bg-black">
       <Navbar />
 
-      <main>
+      <main className="w-full min-w-0">
         <Hero />
         <Services />
         <Gallery />
@@ -39,9 +42,10 @@ function App() {
       </main>
 
       <Footer />
+
       <WhatsAppButton />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

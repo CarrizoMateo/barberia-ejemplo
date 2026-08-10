@@ -30,7 +30,7 @@ function Footer() {
 
               <div>
                 <span className="block font-serif text-lg font-semibold tracking-[0.2em] text-white">
-                  BARBER/PELUQUERIA
+                  BARBER
                 </span>
 
                 <span className="mt-1 block text-[9px] tracking-[0.45em] text-amber-400">

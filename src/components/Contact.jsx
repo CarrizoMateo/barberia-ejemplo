@@ -10,9 +10,9 @@ function Contact() {
   return (
     <section
       id="contacto"
-      className="bg-black px-6 py-24 sm:py-32"
+      className="w-full min-w-0 overflow-hidden bg-black px-5 py-24 sm:px-6 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl min-w-0">
 
         {/* ENCABEZADO */}
         <motion.div
@@ -20,19 +20,19 @@ function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-14 max-w-3xl text-center"
+          className="mx-auto mb-14 w-full max-w-3xl text-center"
         >
           <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-amber-400" />
+            <span className="h-px w-12 shrink-0 bg-amber-400" />
 
             <span className="text-xs uppercase tracking-[0.35em] text-amber-400">
               Contacto
             </span>
 
-            <span className="h-px w-12 bg-amber-400" />
+            <span className="h-px w-12 shrink-0 bg-amber-400" />
           </div>
 
-          <h2 className="font-serif text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-7xl">
+          <h2 className="break-words font-serif text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-7xl">
             Tu próximo
             <br />
             <span className="text-amber-400">
@@ -46,7 +46,7 @@ function Contact() {
         </motion.div>
 
         {/* CONTENIDO */}
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid w-full min-w-0 grid-cols-1 gap-4 lg:grid-cols-2">
 
           {/* INFORMACIÓN */}
           <motion.div
@@ -54,7 +54,7 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border border-white/10 bg-[#080808] p-8 sm:p-10"
+            className="min-w-0 w-full border border-white/10 bg-[#080808] p-6 sm:p-10"
           >
             <p className="text-xs uppercase tracking-[0.25em] text-white/30">
               Hablemos
@@ -64,7 +64,7 @@ function Contact() {
               Reservá tu turno
             </h3>
 
-            <p className="mt-4 text-sm leading-relaxed text-white/40">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/40">
               ¿Tenés alguna consulta? Escribinos por WhatsApp o encontranos
               en nuestras redes.
             </p>
@@ -74,77 +74,77 @@ function Contact() {
               href={`https://wa.me/${business.whatsapp}`}
               target="_blank"
               rel="noreferrer"
-              className="group mt-10 flex items-center gap-4 border border-white/10 p-5 transition-all duration-300 hover:border-amber-400/50"
+              className="group mt-10 flex min-w-0 w-full items-center gap-4 border border-white/10 p-4 transition-all duration-300 hover:border-amber-400/50 sm:p-5"
             >
-              <div className="flex h-12 w-12 items-center justify-center bg-amber-400 text-black">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-amber-400 text-black">
                 <MessageCircle size={21} />
               </div>
 
-              <div className="flex-1">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs uppercase tracking-wider text-white/30">
                   WhatsApp
                 </p>
 
-                <p className="mt-1 text-sm font-semibold text-white">
-                  +54 11 0000-0000
-                </p>
-              </div>
-
-              <ArrowUpRight
-                size={18}
-                className="text-white/30 transition-colors group-hover:text-amber-400"
-              />
-            </a>
-
-            {/* TELÉFONO */}
-            <a
-              href={`tel:${business.phone}`}
-              className="group mt-3 flex items-center gap-4 border border-white/10 p-5 transition-all duration-300 hover:border-amber-400/50"
-            >
-              <div className="flex h-12 w-12 items-center justify-center border border-white/10 text-amber-400">
-                <Phone size={20} />
-              </div>
-
-              <div className="flex-1">
-                <p className="text-xs uppercase tracking-wider text-white/30">
-                  Teléfono
-                </p>
-
-                <p className="mt-1 text-sm font-semibold text-white">
+                <p className="mt-1 truncate text-sm font-semibold text-white">
                   {business.phone}
                 </p>
               </div>
 
               <ArrowUpRight
                 size={18}
-                className="text-white/30 transition-colors group-hover:text-amber-400"
+                className="shrink-0 text-white/30 transition-colors group-hover:text-amber-400"
+              />
+            </a>
+
+            {/* TELÉFONO */}
+            <a
+              href={`tel:${business.phone}`}
+              className="group mt-3 flex min-w-0 w-full items-center gap-4 border border-white/10 p-4 transition-all duration-300 hover:border-amber-400/50 sm:p-5"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/10 text-amber-400">
+                <Phone size={20} />
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <p className="text-xs uppercase tracking-wider text-white/30">
+                  Teléfono
+                </p>
+
+                <p className="mt-1 truncate text-sm font-semibold text-white">
+                  {business.phone}
+                </p>
+              </div>
+
+              <ArrowUpRight
+                size={18}
+                className="shrink-0 text-white/30 transition-colors group-hover:text-amber-400"
               />
             </a>
 
             {/* INSTAGRAM */}
             <a
               href="#"
-              className="group mt-3 flex items-center gap-4 border border-white/10 p-5 transition-all duration-300 hover:border-amber-400/50"
+              className="group mt-3 flex min-w-0 w-full items-center gap-4 border border-white/10 p-4 transition-all duration-300 hover:border-amber-400/50 sm:p-5"
             >
-              <div className="flex h-12 w-12 items-center justify-center border border-white/10 text-amber-400">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/10 text-amber-400">
                 <div className="text-lg font-bold">
-                    IG
+                  IG
                 </div>
               </div>
 
-              <div className="flex-1">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs uppercase tracking-wider text-white/30">
                   Instagram
                 </p>
 
-                <p className="mt-1 text-sm font-semibold text-white">
+                <p className="mt-1 truncate text-sm font-semibold text-white">
                   {business.instagram}
                 </p>
               </div>
 
               <ArrowUpRight
                 size={18}
-                className="text-white/30 transition-colors group-hover:text-amber-400"
+                className="shrink-0 text-white/30 transition-colors group-hover:text-amber-400"
               />
             </a>
           </motion.div>
@@ -155,13 +155,13 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col justify-center border border-white/10 bg-[#080808] p-8 sm:p-10 lg:p-14"
+            className="flex min-w-0 w-full flex-col justify-center border border-white/10 bg-[#080808] p-6 sm:p-10 lg:p-14"
           >
             <p className="text-xs uppercase tracking-[0.25em] text-amber-400">
               Reservas
             </p>
 
-            <h3 className="mt-5 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h3 className="mt-5 break-words font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Tu próximo
               <br />
               corte está
@@ -177,16 +177,16 @@ function Contact() {
             </p>
 
             <a
-              href="https://wa.me/541100000000"
+              href={`https://wa.me/${business.whatsapp}`}
               target="_blank"
               rel="noreferrer"
-              className="group mt-10 inline-flex w-fit items-center gap-3 bg-amber-400 px-7 py-4 text-sm font-bold uppercase tracking-wide text-black transition-colors duration-300 hover:bg-amber-300"
+              className="group mt-10 inline-flex w-full max-w-full items-center justify-center gap-3 bg-amber-400 px-5 py-4 text-sm font-bold uppercase tracking-wide text-black transition-colors duration-300 hover:bg-amber-300 sm:w-fit sm:px-7"
             >
               Reservar por WhatsApp
 
               <ArrowUpRight
                 size={18}
-                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                className="shrink-0 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
               />
             </a>
           </motion.div>
