@@ -1,4 +1,5 @@
 import { ArrowUp, MessageCircle } from 'lucide-react'
+import business from '../data/business'
 
 function Footer() {
   const links = [
@@ -10,38 +11,38 @@ function Footer() {
   ]
 
   return (
-    <footer className="border-t border-white/10 bg-[#050505]">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="w-full min-w-0 overflow-hidden border-t border-white/10 bg-[#050505]">
+      <div className="mx-auto w-full max-w-7xl min-w-0 px-5 py-16 sm:px-6 lg:px-8">
 
         {/* PARTE SUPERIOR */}
-        <div className="flex flex-col justify-between gap-10 md:flex-row">
+        <div className="flex min-w-0 flex-col justify-between gap-10 md:flex-row">
 
           {/* LOGO */}
-          <div>
+          <div className="min-w-0">
             <a
               href="#inicio"
-              className="inline-flex items-center gap-3"
+              className="inline-flex max-w-full items-center gap-3"
             >
-              <div className="flex h-11 w-11 items-center justify-center border border-amber-400/50 bg-amber-400/10">
+              <div className="flex h-15 w-15 shrink-0 items-center justify-center border border-amber-400/50 bg-amber-400/10">
                 <span className="font-serif text-xl font-bold text-amber-400">
-                  B
+                  <img src="./public/Faruh - Logo.png" alt="Logo Barbería Faruh" />
                 </span>
               </div>
 
-              <div>
-                <span className="block font-serif text-lg font-semibold tracking-[0.2em] text-white">
-                  BARBER
+              <div className="min-w-0">
+                <span className="block truncate font-serif text-lg font-semibold tracking-[0.15em] text-white sm:tracking-[0.2em]">
+                  {business.shortName}
                 </span>
 
-                <span className="mt-1 block text-[9px] tracking-[0.45em] text-amber-400">
-                  PREMIUM
+                <span className="mt-1 block text-[8px] tracking-[0.35em] text-amber-400 sm:text-[9px] sm:tracking-[0.45em]">
+                  BARBERÍA
                 </span>
               </div>
             </a>
 
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/35">
-              Estilo, precisión y experiencia.
-              Tu imagen merece el mejor cuidado.
+              Estilo, precisión y atención en cada detalle.
+              Tu imagen merece una experiencia a la altura.
             </p>
           </div>
 
@@ -72,8 +73,11 @@ function Footer() {
 
             <div className="mt-5 flex gap-3">
 
+              {/* INSTAGRAM */}
               <a
-                href="#"
+                href={business.instagram}
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Instagram"
                 className="flex h-11 w-11 items-center justify-center border border-white/10 text-white/50 transition-all duration-300 hover:border-amber-400 hover:text-amber-400"
               >
@@ -82,8 +86,9 @@ function Footer() {
                 </span>
               </a>
 
+              {/* WHATSAPP */}
               <a
-                href="https://wa.me/541100000000"
+                href={`https://wa.me/${business.whatsapp}`}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
@@ -93,23 +98,28 @@ function Footer() {
               </a>
 
             </div>
+
+            <p className="mt-4 text-xs text-white/25">
+              {business.instagram}
+            </p>
           </div>
+
         </div>
 
         {/* SEPARADOR */}
         <div className="my-12 h-px bg-white/10" />
 
         {/* PARTE INFERIOR */}
-        <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+        <div className="flex min-w-0 flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
 
           <p className="text-xs text-white/25">
-            © {new Date().getFullYear()} Barber Premium. Todos los derechos
+            © {new Date().getFullYear()} {business.name}. Todos los derechos
             reservados.
           </p>
 
           <a
             href="#inicio"
-            className="group flex items-center gap-2 text-xs uppercase tracking-wider text-white/40 transition-colors hover:text-amber-400"
+            className="group flex shrink-0 items-center gap-2 text-xs uppercase tracking-wider text-white/40 transition-colors hover:text-amber-400"
           >
             Volver arriba
 

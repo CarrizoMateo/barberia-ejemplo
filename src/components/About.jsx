@@ -10,22 +10,22 @@ import business from '../data/business'
 const features = [
   {
     title: 'Precisión',
-    text: 'Cada corte es trabajado con atención al detalle para lograr un resultado impecable.',
+    text: 'Cada detalle importa. Buscamos que cada corte tenga una terminación cuidada y definida.',
     icon: Scissors,
   },
   {
-    title: 'Experiencia',
-    text: 'Años de experiencia y conocimiento para encontrar el estilo que mejor se adapta a vos.',
+    title: 'Estilo',
+    text: 'Trabajamos para encontrar un estilo que se adapte a tu personalidad y a lo que buscás.',
     icon: Sparkles,
   },
   {
     title: 'Calidad',
-    text: 'Utilizamos productos y herramientas profesionales para garantizar el mejor resultado.',
+    text: 'Una experiencia cuidada desde el momento en que llegás hasta el resultado final.',
     icon: ShieldCheck,
   },
   {
     title: 'Pasión',
-    text: 'Nos apasiona nuestro trabajo y buscamos que cada visita sea una experiencia diferente.',
+    text: 'Porque una barbería no es solamente un lugar para cortarse el pelo. Es parte de tu estilo.',
     icon: Heart,
   },
 ]
@@ -34,9 +34,9 @@ function About() {
   return (
     <section
       id="nosotros"
-      className="bg-black px-6 py-24 sm:py-32"
+      className="w-full min-w-0 overflow-hidden bg-black px-5 py-24 sm:px-6 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl min-w-0">
 
         {/* ENCABEZADO */}
         <motion.div
@@ -44,17 +44,17 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-16 max-w-3xl"
+          className="mb-16 w-full max-w-3xl"
         >
           <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-12 bg-amber-400" />
+            <span className="h-px w-12 shrink-0 bg-amber-400" />
 
             <span className="text-xs uppercase tracking-[0.35em] text-amber-400">
-              Nosotros
+              Sobre Faruh
             </span>
           </div>
 
-          <h2 className="font-serif text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="break-words font-serif text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
             Más que un
             <br />
             <span className="text-amber-400">
@@ -64,7 +64,7 @@ function About() {
         </motion.div>
 
         {/* DESCRIPCIÓN + ESTADÍSTICAS */}
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid w-full min-w-0 gap-12 lg:grid-cols-2 lg:gap-20">
 
           {/* DESCRIPCIÓN */}
           <motion.div
@@ -72,6 +72,7 @@ function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
+            className="min-w-0"
           >
             <p className="max-w-xl text-lg leading-relaxed text-white/50">
               {business.description}
@@ -80,9 +81,8 @@ function About() {
             <div className="mt-8 h-px w-full max-w-xl bg-white/10" />
 
             <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/30">
-              Creemos que un buen corte no es solamente una cuestión de
-              apariencia. Es confianza, personalidad y la forma en la que
-              elegís mostrarte al mundo.
+              Tu imagen forma parte de quién sos. Por eso cada visita busca
+              combinar estilo, precisión y una atención pensada para vos.
             </p>
           </motion.div>
 
@@ -92,15 +92,15 @@ function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2"
+            className="grid min-w-0 grid-cols-2 gap-px border border-white/10 bg-white/10"
           >
             {business.stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="bg-[#080808] p-8 sm:p-10"
+                className="min-w-0 bg-[#080808] p-6 sm:p-10"
               >
                 <p
-                  className={`font-serif text-5xl font-bold sm:text-6xl ${
+                  className={`font-serif text-4xl font-bold sm:text-6xl ${
                     index === 0 || index === 3
                       ? 'text-amber-400'
                       : 'text-white'
@@ -109,7 +109,7 @@ function About() {
                   {stat.value}
                 </p>
 
-                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/40">
+                <p className="mt-3 break-words text-[10px] uppercase tracking-[0.15em] text-white/40 sm:text-xs sm:tracking-[0.2em]">
                   {stat.label}
                 </p>
               </div>
@@ -118,7 +118,7 @@ function About() {
         </div>
 
         {/* DIFERENCIALES */}
-        <div className="mt-20 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-20 grid w-full min-w-0 grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon
 
@@ -132,7 +132,7 @@ function About() {
                   duration: 0.5,
                   delay: index * 0.08,
                 }}
-                className="group bg-[#080808] p-7 transition-colors duration-300 hover:bg-[#101010]"
+                className="group min-w-0 bg-[#080808] p-7 transition-colors duration-300 hover:bg-[#101010]"
               >
                 <Icon
                   size={24}

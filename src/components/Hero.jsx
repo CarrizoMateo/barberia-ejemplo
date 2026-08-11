@@ -54,8 +54,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-8 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg"
           >
-            Cortes de precisión, barba y estilo personalizado.
-            Una experiencia diseñada para quienes cuidan cada detalle.
+            {business.description}
           </motion.p>
 
           {/* Botones */}
@@ -66,7 +65,7 @@ function Hero() {
             className="mt-10 flex w-full flex-col gap-4 sm:flex-row"
           >
             <a
-              href="#contacto"
+              href={`https://wa.me/${business.whatsapp}`}
               className="group inline-flex w-full items-center justify-center gap-3 bg-amber-400 px-7 py-4 text-sm font-bold uppercase tracking-wide text-black transition-all duration-300 hover:bg-amber-300 sm:w-auto"
             >
               Reservar turno

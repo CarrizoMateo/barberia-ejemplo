@@ -1,28 +1,36 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
-import images from '../assets/images'
+import {
+  ArrowUpRight,
+  Scissors,
+  Sparkles,
+  Target,
+  Zap,
+} from 'lucide-react'
 
-const gallery = [
+const highlights = [
   {
-    image: images.gallery[0],
-    title: 'Barba definida',
-    category: 'Barba',
+    number: '01',
+    title: 'PRECISIÓN',
+    text: 'Cada detalle cuenta. Cortes definidos y terminaciones cuidadas.',
+    icon: Target,
   },
   {
-    image: images.gallery[1],
-    title: 'Orden y estilo',
-    category: 'Lugar',
-  },
-    
-  {
-    image: images.gallery[2],
-    title: 'Estilo clásico',
-    category: 'Cortes',
+    number: '02',
+    title: 'ESTILO',
+    text: 'Un look pensado para vos, respetando tu personalidad.',
+    icon: Scissors,
   },
   {
-    image: images.gallery[3],
-    title: 'Barber moderna',
-    category: 'Lugar',
+    number: '03',
+    title: 'DETALLE',
+    text: 'Barba, líneas y terminaciones trabajadas con dedicación.',
+    icon: Sparkles,
+  },
+  {
+    number: '04',
+    title: 'ACTITUD',
+    text: 'No se trata solamente de un corte. Se trata de cómo te sentís.',
+    icon: Zap,
   },
 ]
 
@@ -30,9 +38,9 @@ function Gallery() {
   return (
     <section
       id="galeria"
-      className="bg-black px-6 py-24 sm:py-32"
+      className="w-full min-w-0 overflow-hidden bg-black px-5 py-24 sm:px-6 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl min-w-0">
 
         {/* ENCABEZADO */}
         <motion.div
@@ -43,69 +51,95 @@ function Gallery() {
           className="mb-14"
         >
           <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-12 bg-amber-400" />
+            <span className="h-px w-12 shrink-0 bg-amber-400" />
 
             <span className="text-xs uppercase tracking-[0.35em] text-amber-400">
-              Nuestro trabajo
+              El estilo Faruh
             </span>
           </div>
 
           <h2 className="font-serif text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-            El estilo
+            Más que un
             <br />
             <span className="text-amber-400">
-              habla solo.
+              corte.
             </span>
           </h2>
 
           <p className="mt-6 max-w-xl text-white/50">
-            Una selección de nuestros trabajos. Cada corte es diferente,
-            porque cada cliente también lo es.
+            Precisión, estilo y atención en cada detalle. Una experiencia
+            pensada para quienes buscan algo más que una barbería.
           </p>
         </motion.div>
 
-        {/* GALERÍA */}
-        <div className="grid gap-4 sm:grid-cols-2">
-          {gallery.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-              className="group relative h-[420px] overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+        {/* DIFERENCIALES */}
+        <div className="grid w-full min-w-0 grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map((item, index) => {
+            const Icon = item.icon
 
-              {/* OSCURECIMIENTO */}
-              <div className="absolute inset-0 bg-black/20 transition-all duration-500 group-hover:bg-black/50" />
+            return (
+              <motion.article
+                key={item.number}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                className="group relative min-w-0 bg-[#080808] p-7 transition-colors duration-300 hover:bg-[#101010] sm:p-8"
+              >
+                {/* NÚMERO */}
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs tracking-[0.2em] text-white/20">
+                    {item.number}
+                  </span>
 
-              {/* INFORMACIÓN */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="text-xs uppercase tracking-[0.3em] text-amber-400">
-                  {item.category}
-                </span>
-
-                <div className="mt-2 flex items-center justify-between">
-                  <h3 className="font-serif text-2xl font-semibold text-white">
-                    {item.title}
-                  </h3>
-
-                  <div className="flex h-10 w-10 items-center justify-center border border-white/30 text-white transition-all duration-300 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-black">
-                    <ArrowUpRight size={18} />
+                  <div className="flex h-10 w-10 items-center justify-center border border-white/10 text-white/40 transition-all duration-300 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-black">
+                    <ArrowUpRight size={17} />
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* ICONO */}
+                <div className="mt-12">
+                  <Icon
+                    size={24}
+                    strokeWidth={1.5}
+                    className="text-amber-400 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+
+                {/* TEXTO */}
+                <h3 className="mt-6 font-serif text-2xl font-semibold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-relaxed text-white/40">
+                  {item.text}
+                </p>
+
+                {/* LÍNEA */}
+                <div className="mt-8 h-px w-8 bg-amber-400 transition-all duration-500 group-hover:w-full" />
+              </motion.article>
+            )
+          })}
         </div>
+
+        {/* FRASE FINAL */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-16 border-l border-amber-400 pl-6 sm:pl-8"
+        >
+          <p className="max-w-3xl font-serif text-2xl leading-relaxed text-white sm:text-3xl lg:text-4xl">
+            "Tu imagen habla antes que vos.
+            <span className="text-amber-400">
+              {' '}Que diga lo que querés.
+            </span>"
+          </p>
+        </motion.div>
 
       </div>
     </section>

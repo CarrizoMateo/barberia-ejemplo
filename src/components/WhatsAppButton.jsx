@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
+import business from '../data/business'
 
 function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/541100000000"
+      href={`https://wa.me/${business.whatsapp}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Contactar por WhatsApp"

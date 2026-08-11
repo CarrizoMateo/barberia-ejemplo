@@ -19,8 +19,8 @@ function Navbar() {
   }
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between border-b border-white/10 bg-black px-6 py-4">
+    <header className="fixed left-0 top-0 z-50 w-full min-w-0">
+      <nav className="mx-auto flex w-full max-w-7xl min-w-0 items-center justify-between border-b border-white/10 bg-black px-5 py-4 sm:px-6">
 
         {/* LOGO */}
         <a
@@ -28,19 +28,19 @@ function Navbar() {
           onClick={handleLinkClick}
           className="group flex min-w-0 items-center gap-3"
         >
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-amber-400/50 bg-amber-400/10">
+          <div className="flex h-15 w-15 shrink-0 items-center justify-center border border-amber-400/50 bg-amber-400/10">
             <span className="font-serif text-xl font-bold text-amber-400">
-              B
+              <img src="./public/Faruh - Logo.png" alt="Logo" />
             </span>
           </div>
 
           <div className="min-w-0 leading-none">
-            <span className="block truncate font-serif text-lg font-semibold tracking-[0.2em] text-white">
+            <span className="block truncate font-serif text-lg font-semibold tracking-[0.15em] text-white sm:tracking-[0.2em]">
               {business.shortName}
             </span>
 
-            <span className="mt-1 block text-[9px] tracking-[0.45em] text-amber-400">
-              PREMIUM
+            <span className="mt-1 block text-[8px] tracking-[0.35em] text-amber-400 sm:text-[9px] sm:tracking-[0.45em]">
+              BARBERÍA
             </span>
           </div>
         </a>
@@ -60,7 +60,9 @@ function Navbar() {
           ))}
 
           <a
-            href="#contacto"
+            href={`https://wa.me/${business.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
             className="ml-2 whitespace-nowrap border border-amber-400 bg-amber-400 px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-amber-400"
           >
             RESERVAR TURNO
@@ -87,7 +89,7 @@ function Navbar() {
         }}
         className="w-full overflow-hidden border-t border-white/10 bg-black md:hidden"
       >
-        <div className="flex w-full flex-col px-6 py-5">
+        <div className="flex w-full flex-col px-5 py-5 sm:px-6">
           {links.map((link) => (
             <a
               key={link.name}
@@ -100,7 +102,9 @@ function Navbar() {
           ))}
 
           <a
-            href="#contacto"
+            href={`https://wa.me/${business.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
             onClick={handleLinkClick}
             className="mt-5 bg-amber-400 px-5 py-3 text-center text-sm font-bold tracking-wide text-black"
           >

@@ -65,8 +65,8 @@ function Contact() {
             </h3>
 
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/40">
-              ¿Tenés alguna consulta? Escribinos por WhatsApp o encontranos
-              en nuestras redes.
+              Consultá disponibilidad y escribinos directamente para reservar
+              tu próximo turno.
             </p>
 
             {/* WHATSAPP */}
@@ -123,7 +123,7 @@ function Contact() {
 
             {/* INSTAGRAM */}
             <a
-              href="#"
+              href="https://www.instagram.com/faruh_sanmiguel/"
               className="group mt-3 flex min-w-0 w-full items-center gap-4 border border-white/10 p-4 transition-all duration-300 hover:border-amber-400/50 sm:p-5"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/10 text-amber-400">
