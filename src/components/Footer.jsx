@@ -75,7 +75,7 @@ function Footer() {
 
               {/* INSTAGRAM */}
               <a
-                href={business.instagram}
+                href={`https://instagram.com/${business.instagram}`}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
