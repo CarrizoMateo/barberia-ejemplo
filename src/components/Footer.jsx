@@ -25,7 +25,7 @@ function Footer() {
             >
               <div className="flex h-15 w-15 shrink-0 items-center justify-center border border-amber-400/50 bg-amber-400/10">
                 <span className="font-serif text-xl font-bold text-amber-400">
-                  <img src="./public/Faruh - Logo.png" alt="Logo Barbería Faruh" />
+                  <img src="/Faruh - Logo.png" alt="Logo Barbería Faruh" />
                 </span>
               </div>
 
