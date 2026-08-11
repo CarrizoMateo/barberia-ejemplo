@@ -10,12 +10,12 @@ const business = {
   description:
     'Barbería especializada en cortes, barba y estilo masculino.',
 
-  phone: '+54 11 3664-1542',
-  whatsapp: '541136641542',
+  phone: '+54 9 11 5934-9886',
+  whatsapp: '5491159349886',
 
-  instagram: '@faruh_sanmiguel',
+  instagram: '@faruhbarberclub.arg',
 
-  address: 'Av. Gaspar Campos 2296',
+  address: 'Domingo Faustino Sarmiento 911',
   city: 'San Miguel, Buenos Aires',
 
   stats: [

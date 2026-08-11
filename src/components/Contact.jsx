@@ -71,7 +71,7 @@ function Contact() {
 
             {/* WHATSAPP */}
             <a
-              href={`https://wa.me/${business.whatsapp}`}
+              href={`https://wa.me/message/7CGZDULDER4EP1}`}
               target="_blank"
               rel="noreferrer"
               className="group mt-10 flex min-w-0 w-full items-center gap-4 border border-white/10 p-4 transition-all duration-300 hover:border-amber-400/50 sm:p-5"
